@@ -1,11 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
+	<title>InterviewHub</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-
-Rithvik Suratia
-
+<body class="bg-light">
+	<div class="card bg-light">
+		<div class="card-header bg-primary">
+			<h4 class="mb-0 text-white">Interview Experience</h4>
+		</div>
+		<div class="card-body">
+			<form class="form" role="form" autocomplete="off">
+				<div class="form-group row">
+					<label class="col-lg-1 col-form-label form-control-label">Username</label>
+					<div class="col-lg-11">
+						<input class="form-control" type="text">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-lg-1 col-form-label form-control-label">Company</label>
+					<div class="col-lg-11">
+						<select id="company" class="form-control" size="0">
+							<option value="amazon">Amazon</option>
+							<option value="media.net">Media.net</option>
+							<option value="samsung">Samsung</option>
+							<option value="tcs">Tata Consultancy Services</option>
+							<option value="microsoft">Microsoft</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-lg-1 col-form-label form-control-label">Offer type</label>
+					<div class="col-lg-11">
+						<select id="offer_type" class="form-control" size="0">
+							<option value="2m-internship">Two Month Internship</option>
+							<option value="6m-internship">Six Month Internship</option>
+							<option value="fte">FTE</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-lg-1 col-form-label form-control-label">Experience</label>
+					<div class="col-lg-11">
+						<textarea class="form-control" rows="5" id="experience"></textarea>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-lg-1 col-form-label form-control-label"></label>
+					<div class="col-lg-11">
+						<button class="btn btn-success">Submit</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
