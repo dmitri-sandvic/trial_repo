@@ -6,7 +6,6 @@ const path = require('path');
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://sandvic1:M4f6Tvhdh8QhDvKK@opensaucecluster-qfoum.mongodb.net/test?retryWrites=true&w=majority";
 
-
 app.use(express.json());
 
 app.get('/', function(req, res) {
