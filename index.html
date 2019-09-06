@@ -10,65 +10,63 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body class="bg-light">
-	<div class="card bg-light">
-		<div class="card-header bg-primary">
-			<h4 class="mb-0 text-white">Interview Experience</h4>
-		</div>
-		<div class="card-body">
-			<form class="form" role="form" autocomplete="off">
-				<div class="form-group row">
-					<label class="col-lg-1 col-form-label form-control-label">Username</label>
-					<div class="col-lg-11">
-						<input class="form-control" type="text">
-					</div>
-				</div>
-				<div class="form-group row">
-					<label class="col-lg-1 col-form-label form-control-label">Company</label>
-					<div class="col-lg-11">
-						<select id="company" class="form-control" size="0">
-							<option value="amazon">Amazon</option>
-							<option value="media.net">Media.net</option>
-							<option value="samsung">Samsung</option>
-							<option value="tcs">Tata Consultancy Services</option>
-							<option value="microsoft">Microsoft</option>
-						</select>
-					</div>
-				</div>
-				<div class="form-group row">
-					<label class="col-lg-1 col-form-label form-control-label">Offer type</label>
-					<div class="col-lg-11">
-						<select id="offer_type" class="form-control" size="0">
-							<option value="2m-internship">Two Month Internship</option>
-							<option value="6m-internship">Six Month Internship</option>
-							<option value="fte">FTE</option>
-						</select>
-					</div>
-				</div>
-				<div class="form-group row">
-					<label class="col-lg-1 col-form-label form-control-label">Experience</label>
-					<div class="col-lg-11">
-						<textarea class="form-control" rows="5" id="experience"></textarea>
-					</div>
-				</div>
-				<div class="form-group row">
-					<label class="col-lg-1 col-form-label form-control-label"></label>
-					<div class="col-lg-11">
-						<button class="btn btn-success" id="submit">Submit</button>
-					</div>
-				</div>
-			</form>
-		</div>
+<div class="card bg-light">
+	<div class="card-header bg-primary">
+		<h4 class="mb-0 text-white">Interview Experience</h4>
 	</div>
+	<div class="card-body">
+		<form class="form" role="form" autocomplete="off">
+			<div class="form-group row">
+				<label class="col-lg-1 col-form-label form-control-label">Username</label>
+				<div class="col-lg-11">
+					<input class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-lg-1 col-form-label form-control-label">Company</label>
+				<div class="col-lg-11">
+					<select id="company" class="form-control" size="0">
+						<option value="amazon">Amazon</option>
+						<option value="media.net">Media.net</option>
+						<option value="samsung">Samsung</option>
+						<option value="tcs">Tata Consultancy Services</option>
+						<option value="microsoft">Microsoft</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-lg-1 col-form-label form-control-label">Offer type</label>
+				<div class="col-lg-11">
+					<select id="offer_type" class="form-control" size="0">
+						<option value="2m-internship">Two Month Internship</option>
+						<option value="6m-internship">Six Month Internship</option>
+						<option value="fte">FTE</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-lg-1 col-form-label form-control-label">Experience</label>
+				<div class="col-lg-11">
+					<textarea class="form-control" rows="5" id="experience"></textarea>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-lg-1 col-form-label form-control-label"></label>
+				<div class="col-lg-11">
+					<button class="btn btn-success" id="submit">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
 </body>
 <script>
 	$("#submit").click(function(){
 		$.ajax({
 			url: '/insert',
-			dataType: 'text',
+			dataType: 'json',
 			type: 'post',
-			data: {
-				"name":"Rutvik Sutaria"
-			},
+			data: JSON.stringify({'name':'Rutvik Sutaria'}),
 			success: function( data, textStatus, jQxhr ){
 				alert(data);
 			},

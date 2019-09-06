@@ -1,3 +1,4 @@
+'use strict';
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -16,7 +17,11 @@ app.post('/check', function(req, res) {
     res.send({'message': 'connected!' });
 });
 app.post('/insert',function(req,res) {
-    console.log(req.data);
+    let obj;
+    req.on('data',function(data){
+        obj = JSON.parse(data).name;
+    });
+    //console.log(body);
     // const MongoClient = require('mongodb').MongoClient;
     // const uri = "mongodb+srv://sandvic1:M4f6Tvhdh8QhDvKK@opensaucecluster-qfoum.mongodb.net/test?retryWrites=true&w=majority";
     // const client = new MongoClient(uri, { useNewUrlParser: true });
