@@ -53,11 +53,20 @@
 				<div class="form-group row">
 					<label class="col-lg-1 col-form-label form-control-label"></label>
 					<div class="col-lg-11">
-						<button class="btn btn-success">Submit</button>
+						<button class="btn btn-success" id="submit">Submit</button>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
 </body>
+<script>
+	$("submit").click(function(){
+		$.post("demo_test_post.asp", {
+			},
+			function(data, status){
+				alert("Data: " + data + "\nStatus: " + status);
+			});
+	});
+</script>
 </html>
