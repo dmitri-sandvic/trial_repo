@@ -63,10 +63,12 @@
 <script>
 	$("#submit").click(function(){
 		$.ajax({
-			url: '/check',
+			url: '/insert',
 			dataType: 'text',
 			type: 'post',
-			data: {},
+			data: {
+				"name":"Rutvik Sutaria"
+			},
 			success: function( data, textStatus, jQxhr ){
 				alert(data);
 			},
