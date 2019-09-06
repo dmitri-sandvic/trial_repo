@@ -62,18 +62,33 @@
 </body>
 <script>
 	$("#submit").click(function(){
-		$.ajax({
+		/*$.ajax({
 			url: '/insert',
 			dataType: 'json',
 			type: 'post',
-			data: JSON.stringify({'name':'Rutvik Sutaria'}),
+			body: JSON.stringify({'name':'Rutvik Sutaria'}),
+			data: JSON.stringify({'name': 'Rutvik Sutaria'}),
 			success: function( data, textStatus, jQxhr ){
 				alert(data);
 			},
 			error: function( jqXhr, textStatus, errorThrown ){
 				console.log( errorThrown );
 			}
-		});
+		});*/
+		function test(json_obj){
+			alert(JSON.stringify(json_obj));
+		}
+		fetch("/insert",
+			{
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				method: "POST",
+				body: JSON.stringify({'name':'Rutvik Sutaria'})
+			}).then(response => response.json())
+				.then(response => test(response))
+				.catch(error => console.error('Error:', error));
 		return false;
 	});
 </script>

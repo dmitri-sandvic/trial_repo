@@ -17,11 +17,13 @@ app.post('/check', function(req, res) {
     res.send({'message': 'connected!' });
 });
 app.post('/insert',function(req,res) {
-    let obj;
-    req.on('data',function(data){
-        obj = JSON.parse(data).name;
-    });
-    //console.log(body);
+    console.log(req.body);
+    res.send({'message': 'connected!' });
+    // req.on('data',function(data){
+    //     obj = JSON.parse(data);
+    //     console.log(obj.name);
+    // });
+    //console.log(req.body);
     // const MongoClient = require('mongodb').MongoClient;
     // const uri = "mongodb+srv://sandvic1:M4f6Tvhdh8QhDvKK@opensaucecluster-qfoum.mongodb.net/test?retryWrites=true&w=majority";
     // const client = new MongoClient(uri, { useNewUrlParser: true });
