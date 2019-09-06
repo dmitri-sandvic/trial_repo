@@ -62,11 +62,19 @@
 </body>
 <script>
 	$("#submit").click(function(){
-		$.post("demo_test_post.asp", {
+		$.ajax({
+			url: '/check',
+			dataType: 'text',
+			type: 'post',
+			data: {},
+			success: function( data, textStatus, jQxhr ){
+				alert(data);
 			},
-			function(data, status){
-				alert("Data: " + data + "\nStatus: " + status);
-			});
+			error: function( jqXhr, textStatus, errorThrown ){
+				console.log( errorThrown );
+			}
+		});
+		return false;
 	});
 </script>
 </html>
